@@ -68,6 +68,7 @@ linkpulse/
 │   ├── LinkPulse_LoginPage.png
 │   ├── LinkPulse_ManageLinks.png
 │   ├── LinkPulse_MarketingCampaigns.png
+|   ├── LinkPulse_AboutUsPage.png
 │   └── LinkPulse_Overview.png
 │
 ├── frontend/                    # Client-side templates and styles
