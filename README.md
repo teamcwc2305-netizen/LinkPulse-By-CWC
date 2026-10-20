@@ -235,9 +235,7 @@ LinkPulse uses seven-character Base62 aliases.
 
 Base62 uses 62 possible characters per position. The theoretical number of seven-character combinations is:
 
-\[
-62^7 = 3,521,614,606,208
-\]
+**62⁷ = 3,521,614,606,208**
 
 Collision checks and retry handling help prevent duplicate aliases.
 
