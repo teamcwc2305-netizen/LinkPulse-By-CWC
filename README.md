@@ -492,20 +492,20 @@ Set the required environment variables through the deployment platform.
 | `DB_ENGINE` | Database engine selected by the application |
 | `SQLITE_PATH` | SQLite database path, if applicable |
 
-### 4. Production Checklist
+### Deployment Security Checklist
 
-- [ ] Enable HTTPS.
-- [ ] Replace default credentials.
-- [ ] Configure a strong application secret.
-- [ ] Use persistent database storage.
-- [ ] Validate destination URLs and resolved IP addresses.
-- [ ] Configure trusted proxy headers correctly.
-- [ ] Test click-limit behavior under concurrent requests.
-- [ ] Configure appropriate rate limits.
-- [ ] Review database backups and access permissions.
-- [ ] Configure application logging and error handling.
-- [ ] Verify that analytics and privacy controls behave as expected.
-- [ ] Test the deployment from an external browser.
+- Enable HTTPS.
+- Replace default credentials.
+- Configure a strong application secret.
+- Use persistent database storage.
+- Validate destination URLs and resolved IP addresses.
+- Configure trusted proxy headers correctly.
+- Test click-limit behavior under concurrent requests.
+- Configure appropriate rate limits.
+- Review database backups and access permissions.
+- Configure application logging and error handling.
+- Verify analytics functionality and privacy controls.
+- Test the deployment from an external browser.
 
 ### Database Recommendation
 
@@ -594,8 +594,6 @@ These items represent potential enhancements, not necessarily implemented featur
 ---
 
 ## ScreenShot
-
-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_First_Page.png)
 
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPluse_Overview.png)
