@@ -336,12 +336,6 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-
-
-These variables are illustrative. Ensure the variable names and supported values match `config.py` and the database adapter.
-
-Generate a strong secret key rather than using the example value in a real deployment. Never commit `.env` or production credentials to a public repository.
-
 ### 5. Run the Application
 
 ```bash
