@@ -84,7 +84,7 @@ linkpulse/
 ├── linkpulse.db                 # SQLite database storage
 ├── requirements.txt             # List of Python dependencies
 └── README.md                    # Project overview & documentation
-
+```
 ---
 
 ## Key Features
