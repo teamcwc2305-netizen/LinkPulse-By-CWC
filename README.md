@@ -229,7 +229,7 @@ LinkPulse uses seven-character Base62 aliases.
 Base62 uses 62 possible characters per position. The theoretical number of seven-character combinations is:
 
 \[
-62^7 = 3{,}521{,}614{,}606{,}208
+(62)^7=3,521,614,606,208
 \]
 
 Collision checks and retry handling help prevent duplicate aliases from being assigned.
@@ -327,30 +327,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
 
-Copy `.env.example` to `.env`.
-
-**Windows**
-
-```bat
-copy .env.example .env
-```
-
-**macOS or Linux**
-
-```bash
-cp .env.example .env
-```
-
-Example configuration:
-
-```ini
-SECRET_KEY=replace-with-a-strong-random-secret
-PUBLIC_BASE_URL=http://127.0.0.1:5000
-DB_ENGINE=sqlite
-SQLITE_PATH=linkpulse.db
-```
 
 These variables are illustrative. Ensure the variable names and supported values match `config.py` and the database adapter.
 
@@ -594,18 +571,26 @@ These items represent potential enhancements, not necessarily implemented featur
 ---
 
 ## ScreenShot
+Login Page-
+![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/525187093a785d4bf2b491661448339d4e52a571/Outputs/LinkPulse_LoginPage.png)
+
+First Page-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_First_Page.png)
 
+Overview Page-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPluse_Overview.png)
 
+Manage Link Page-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_ManageLinks.png)
 
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_ActiveShortLink.png
 )
 
+Analytics Page-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_Analytics.png
 )
 
+Campaigns Page-
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_MarkitingCampaigns.png)
 
 ---
