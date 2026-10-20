@@ -621,7 +621,7 @@ These items represent potential enhancements, not necessarily implemented featur
 
 ## Weblink
 
-[LinkPulse](https://linkpulse-by-cwc.onrender.com/)
+[https://LinkPulse-by-cwc.onrender.com](https://linkpulse-by-cwc.onrender.com/)
 
 ---
 
