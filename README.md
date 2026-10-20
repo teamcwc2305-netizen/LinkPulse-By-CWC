@@ -14,7 +14,7 @@ Combining a high-performance Flask backend with a modern glassmorphic dashboard,
 
 ## Table of Contents
 
--[WebLink](#weblink)
+- [WebLink](#weblink)
 - [Overview](#overview)
 - [Project Directory Structure](#project-directory-structure)
 - [Key Features](#key-features)
@@ -33,7 +33,7 @@ Combining a high-performance Flask backend with a modern glassmorphic dashboard,
 
 ---
 
-##Weblink
+## Weblink
 
 [LinkPulse](https://linkpulse-by-cwc.onrender.com/)
 
