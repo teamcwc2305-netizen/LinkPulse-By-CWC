@@ -1127,7 +1127,7 @@
       }
 
       const isGet = !opts.method || opts.method === 'GET';
-      const url = isGet 
+      const url = isGet
         ? (path.includes('?') ? `${path}&_t=${Date.now()}` : `${path}?_t=${Date.now()}`)
         : path;
 
