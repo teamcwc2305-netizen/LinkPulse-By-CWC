@@ -187,15 +187,6 @@ A typical short-link request follows the lifecycle below.
 The exact order of database operations, password verification, and analytics processing depends on the implementation. The diagram represents the intended workflow rather than a guarantee about every internal execution detail.
 
 
-## System Architecture
-
-LinkPulse uses a layered architecture that separates request handling,
-link validation, database operations, and telemetry processing.
-
-
-## System Architecture
-
-![System Architecture](frontend/System%20Architecture.png)
 
 ### Click-Limit Enforcement
 
