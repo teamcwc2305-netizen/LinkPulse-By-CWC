@@ -494,24 +494,20 @@ def serve_css():
 
 @app.get("/Outputs/<path:filename>")
 def serve_outputs(filename):
-    return send_from_directory(FRONTEND_DIR / "Outputs", filename)
+    outputs_dir = BASE_DIR / "Outputs"
+    if outputs_dir.is_dir():
+        for f in os.listdir(outputs_dir):
+            if f.lower() == filename.lower():
+                return send_from_directory(outputs_dir, f)
+    return send_from_directory(outputs_dir, filename)
 
 @app.get("/Group_Logo.png")
 def serve_group_logo():
-    # Root Outputs folder load
     outputs_dir = BASE_DIR / "Outputs"
     if outputs_dir.is_dir():
         for f in os.listdir(outputs_dir):
             if f.lower() == "group_logo.png":
                 return send_from_directory(outputs_dir, f)
-
-    # Backup check
-    for folder in [FRONTEND_DIR, BASE_DIR]:
-        if folder.is_dir():
-            for f in os.listdir(folder):
-                if f.lower() == "group_logo.png":
-                    return send_from_directory(folder, f)
-
     return Response("Logo not found", status=404)
 
 @app.get("/favicon.ico")
