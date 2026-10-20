@@ -55,21 +55,33 @@ The platform provides an administrative workspace for creating, organizing, moni
 
 ## Project Directory Structure
 
-```text
-LINKPULSE/
-├── frontend/
-│   ├── Group_Logo.png       # Application brand asset
-│   ├── index.html           # Main telemetry dashboard
-│   ├── login.html           # Authentication interface
-│   └── style.css            # Glassmorphic UI design system
-├── README.md                # Project documentation
-├── app.py                   # Flask server, routing engine and API
-├── config.py                # Environment configuration loader
-├── database.py              # SQLite and MySQL database adapter
-├── helpers.py               # Security utilities and helper functions
-├── requirements.txt         # Python dependencies
-```
+## 📁 Project Structure
 
+```text
+linkpulse/
+│
+├── Outputs/                     # Application screenshots & visual outputs
+│   ├── Group_Logo.png
+│   ├── LinkPulse_ActiveShortLink.png
+│   ├── LinkPulse_Analytics.png
+│   ├── LinkPulse_First_Page.png
+│   ├── LinkPulse_LoginPage.png
+│   ├── LinkPulse_ManageLinks.png
+│   ├── LinkPulse_MarketingCampaigns.png
+│   └── LinkPulse_Overview.png
+│
+├── frontend/                    # Client-side templates and styles
+│   ├── index.html               # Main dashboard / home page
+│   ├── login.html               # Authentication / login page
+│   └── style.css                # UI design and styling
+│
+├── app.py                       # Main application entry point & routing
+├── app_config.py                # App settings and environment configurations
+├── database.py                  # Database connection & query handling
+├── helpers.py                   # Utility functions & helper methods
+├── linkpulse.db                 # SQLite database storage
+├── requirements.txt             # List of Python dependencies
+└── README.md                    # Project overview & documentation
 ---
 
 ## Key Features
