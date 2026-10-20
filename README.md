@@ -489,24 +489,6 @@ Do not assume that moving the application to another hosting platform automatica
 
 ---
 
-## Testing and Troubleshooting
-
-### Application Fails to Start
-
-Check the Python version, virtual environment, installed dependencies, environment variables, and Flask application entry point.
-
-```bash
-python --version
-python -m pip check
-python app.py
-```
-
-### Redirects or Click Limits Behave Unexpectedly
-
-Test active status, expiration, password verification, click-limit enforcement, and concurrent requests independently. Confirm that unsuccessful conditional database updates are handled correctly.
-
----
-
 ## Future Roadmap
 
 Potential areas for future development include:
@@ -524,7 +506,7 @@ These items represent potential enhancements, not necessarily implemented featur
 
 ---
 
-## ScreenShot
+## ScreenShots
 
 ### Login Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/525187093a785d4bf2b491661448339d4e52a571/Outputs/LinkPulse_LoginPage.png)
