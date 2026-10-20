@@ -14,7 +14,6 @@ Combining a high-performance Flask backend with a modern glassmorphic dashboard,
 
 ## Table of Contents
 
-- [WebLink](#weblink)
 - [Overview](#overview)
 - [Project Directory Structure](#project-directory-structure)
 - [Key Features](#key-features)
@@ -30,12 +29,8 @@ Combining a high-performance Flask backend with a modern glassmorphic dashboard,
 - [Future Roadmap](#future-roadmap)
 - [License](#license)
 - [Screenshot](#screenshot)
+- [WebLink](#weblink)
 
----
-
-## Weblink
-
-[LinkPulse](https://linkpulse-by-cwc.onrender.com/)
 
 ---
 
@@ -623,6 +618,14 @@ These items represent potential enhancements, not necessarily implemented featur
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_MarkitingCampaigns.png)
 
 ---
+
+## Weblink
+
+[LinkPulse](https://linkpulse-by-cwc.onrender.com/)
+
+---
+
+
 
 <div align="center">
 
