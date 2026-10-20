@@ -492,9 +492,13 @@ def serve_index():
 def serve_css():
     return send_from_directory(FRONTEND_DIR, "style.css", mimetype="text/css")
 
+@app.get("/Outputs/<path:filename>")
+def serve_outputs(filename):
+    return send_from_directory(FRONTEND_DIR / "Outputs", filename)
+
 @app.get("/Group_Logo.png")
 def serve_group_logo():
-    return send_from_directory(FRONTEND_DIR, "Group_Logo.png")
+    return send_from_directory(FRONTEND_DIR / "Outputs", "Group_Logo.png")
 
 @app.get("/favicon.ico")
 def serve_favicon():
@@ -877,7 +881,7 @@ def analytics_breakdown():
 
 @app.route("/<short_code>", methods=["GET", "POST"])
 def redirect_engine(short_code):
-    if short_code in {"api", "favicon.ico", "Group_Logo.png", "login", "logout", "robots.txt", "style.css"}:
+    if short_code in {"api", "favicon.ico", "Group_Logo.png", "login", "logout", "robots.txt", "style.css", "Outputs"}:
         return Response(status=404)
 
     link = query_one(f"{LINK_SELECT} WHERE l.short_code = %s OR l.custom_alias = %s", (short_code, short_code))
