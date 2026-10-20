@@ -594,8 +594,11 @@ These items represent potential enhancements, not necessarily implemented featur
 ### Campaigns Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_MarkitingCampaigns.png)
 
----
 
+### AboutUs Page
+![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/82e3a0ca53b75b9cc5f0289d300a363c6e974f14/Outputs/LinkPulse_AboutUsPage.png)
+
+---
 ## Weblink
 
 [https://LinkPulse-by-cwc.onrender.com](https://linkpulse-by-cwc.onrender.com/)
