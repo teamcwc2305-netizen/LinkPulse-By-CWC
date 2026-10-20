@@ -293,7 +293,7 @@ Install the following tools:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/vivekjoshi2006/LinkPulse.git
+git clone https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC.git
 cd LinkPulse
 ```
 
@@ -594,6 +594,8 @@ These items represent potential enhancements, not necessarily implemented featur
 ---
 
 ## ScreenShot
+
+
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_First_Page.png)
 
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPluse_Overview.png)
