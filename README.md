@@ -6,100 +6,110 @@
 [![License](https://img.shields.io/badge/License-MIT-purple?style=flat)](LICENSE)
 [![UI](https://img.shields.io/badge/UI-Glassmorphism-indigo?style=flat)](#screenshots)
 
-**LinkPulse** is an intelligent URL management, redirection, and traffic analytics platform designed to make link sharing faster, safer, and more measurable.
+**LinkPulse is a URL management and analytics platform that gives you more control over every link you share.**
 
-Built with Python and Flask, LinkPulse combines centralized short-link management, click-limit enforcement, destination validation, password-protected links, campaign attribution, QR code generation, and traffic telemetry in a modern glassmorphic dashboard.
+Built with Python and Flask, it brings short-link creation, click tracking, campaign management, and access controls together in one dashboard. Whether you're organizing links for a project or tracking the performance of a campaign, LinkPulse helps you manage your links and understand how they're being used.
 
-🌐 **Live Demo:** [LinkPulse — Try It Online](https://linkpulse-by-cwc.onrender.com/)
+🌐 **Live Demo:** [Try LinkPulse](https://linkpulse-by-cwc.onrender.com/)
 
 ---
 
 ## 📑 Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Screenshots](#-screenshots)
-- [System Architecture](#-system-architecture)
-- [Redirect Lifecycle](#-redirect-lifecycle)
-- [Security and Reliability](#-security-and-reliability)
-- [Technology Stack](#-technology-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Configuration](#-configuration)
-- [API Reference](#-api-reference)
-- [Deployment](#-deployment)
-- [Testing and Troubleshooting](#-testing-and-troubleshooting)
-- [Future Roadmap](#-future-roadmap)
-- [License](#-license)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Screenshots](#screenshots)
+- [System Architecture](#system-architecture)
+- [Redirect Lifecycle](#redirect-lifecycle)
+- [Security and Reliability](#security-and-reliability)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Configuration](#configuration)
+- [API Reference](#api-reference)
+- [Deployment](#deployment)
+- [Testing and Troubleshooting](#testing-and-troubleshooting)
+- [Future Roadmap](#future-roadmap)
+- [License](#license)
 
 ---
 
-## 🚀 Overview
+## Overview
 
-Traditional URL shorteners focus primarily on converting long URLs into compact links. LinkPulse extends this functionality with link governance, traffic insights, campaign organization, and configurable access controls.
+Sharing a link is easy. Managing hundreds of them, keeping track of clicks, organizing campaigns, and controlling access is a different story.
 
-The platform provides a centralized workspace for creating, managing, monitoring, and analyzing short links while applying validation and request controls to help mitigate redirect abuse.
+LinkPulse was built to bring these tasks into one place. It lets you create and manage short links, monitor traffic, organize links into campaigns, and apply rules such as expiration dates and click limits.
 
-### Project Objectives
+The project also explores how a lightweight Flask application can combine backend logic, database operations, analytics, and a modern web interface into a single application.
 
-- Generate compact, shareable short URLs.
-- Provide centralized link and campaign management.
-- Enforce configured click limits and expiration policies.
-- Support password-protected destinations.
-- Visualize traffic trends and visitor categories.
-- Filter common automated clients from human-oriented analytics.
-- Generate downloadable QR codes.
-- Support bulk CSV import and data export.
-- Deliver a responsive dashboard with a modern glassmorphic interface.
+### What LinkPulse aims to do
+
+- Make long URLs easier to share.
+- Keep link management organized in one dashboard.
+- Track clicks and view available traffic insights.
+- Set click limits and expiration rules.
+- Protect selected links with password verification.
+- Group links into campaigns.
+- Generate QR codes for easy sharing.
+- Import and export link data through CSV files.
+- Provide a responsive interface with a glassmorphic design.
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-### 1. ⚡ Intelligent Link Management
+### ⚡ Short-Link Management
 
-- **Compact Short URLs:** Generate seven-character Base62 aliases, subject to collision checks.
-- **Link Lifecycle Controls:** Create, update, search, activate, deactivate, and delete links.
-- **Click Limits:** Apply conditional database updates to help enforce configured maximum click counts under concurrent requests.
-- **Expiration Policies:** Prevent redirects after configured expiration deadlines.
-- **Password Protection:** Require server-side password verification for protected destinations.
-- **Link Organization:** Group links into campaigns for easier management.
-- **Fast Redirection:** Use lightweight Flask request handling and database lookups for efficient redirect processing.
+Create compact links and manage them from a central dashboard.
 
-### 2. 📊 Traffic Analytics and Telemetry
+- **Short URLs:** Generate seven-character Base62 aliases, with collision checks.
+- **Link Controls:** Create, edit, search, activate, deactivate, and delete links.
+- **Click Limits:** Configure a maximum number of clicks where supported.
+- **Expiration Dates:** Set links to stop working after a specified deadline.
+- **Password Protection:** Add an extra access check to supported links.
+- **Campaign Organization:** Keep related links grouped together.
+- **Quick Redirects:** Handle short-link requests through Flask and database lookups.
 
-- **Click Trends:** Visualize daily traffic patterns, including seven-day trends where supported.
-- **Device Classification:** Categorize supported visitors as mobile, tablet, or desktop.
-- **Browser Detection:** Identify common browser families from user-agent information.
-- **Geographic Insights:** Use the Cloudflare `CF-IPCountry` header with a configured fallback where available.
-- **Bot Filtering:** Identify common crawlers and automated clients to improve human-traffic analysis.
-- **Traffic Breakdown:** Review supported categorical analytics and aggregate statistics.
-- **Privacy-Aware Identifiers:** Use salted SHA-256 hashes for IP-derived analytics identifiers rather than storing raw IP addresses for those identifiers.
+### 📊 Traffic Analytics
 
-### 3. 🎯 Campaign Management and Productivity
+Get a clearer picture of how your links are being used.
 
-- **Campaign Attribution:** Organize short links into campaigns and analyze supported aggregate metrics.
-- **Dynamic QR Codes:** Generate QR codes in the browser and export them as PNG images.
-- **Bulk CSV Import:** Import up to 2,500 links per batch, with row-level validation feedback where implemented.
-- **CSV Export:** Export link records in an Excel-compatible UTF-8 format with BOM encoding.
-- **Click Simulator:** Simulate visits for testing link behavior and analytics updates.
+- **Click Trends:** View daily click activity and supported date ranges.
+- **Device Categories:** Classify visitors as mobile, tablet, or desktop where detection is available.
+- **Browser Information:** Identify common browser families from user-agent data.
+- **Geographic Information:** Use supported country information, including Cloudflare's `CF-IPCountry` header when configured.
+- **Bot Filtering:** Identify common automated clients to make traffic reports more useful.
+- **Traffic Breakdowns:** Explore available aggregate analytics.
+- **Privacy-Aware Identifiers:** Use salted hashes for IP-derived analytics identifiers where implemented.
 
-### 4. 🎨 Modern Glassmorphic Dashboard
+### 🎯 Campaigns and Productivity
 
-- Translucent surfaces and contemporary visual styling.
+Keep link-related tasks simple and organized.
+
+- **Campaign Tracking:** Group links and review supported campaign metrics.
+- **QR Code Generation:** Generate QR codes for short URLs and save them as PNG images.
+- **CSV Import:** Import up to 2,500 links per batch where supported.
+- **CSV Export:** Export link data in a spreadsheet-friendly format.
+- **Click Simulation:** Test link behavior and analytics without relying entirely on real visits.
+
+### 🎨 Dashboard and User Experience
+
+LinkPulse uses a glassmorphic interface to bring its management tools together.
+
+- Translucent UI elements and modern visual styling.
 - Responsive layouts for supported screen sizes.
-- Interactive charts and link management controls.
-- Dedicated login and dashboard interfaces.
+- Dedicated login and dashboard pages.
+- Interactive charts and link-management controls.
+- Navigation for links, analytics, and campaigns.
 - Plus Jakarta Sans and JetBrains Mono typography.
-- Organized navigation for links, analytics, and campaigns.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-Screenshots provide a visual overview of the LinkPulse interface and its core workflows.
+Here are some views of the LinkPulse interface.
 
-> The image paths below assume the filenames exist in the repository's `Outputs/` directory. Verify the exact spelling and capitalization before publishing.
+> Make sure the filenames below match the actual images inside `Outputs/`. GitHub paths are case-sensitive.
 
 ### Login Page
 
@@ -107,15 +117,15 @@ Screenshots provide a visual overview of the LinkPulse interface and its core wo
 
 ### Landing Page
 
-![LinkPulse First Page](Outputs/LinkPulse_First_Page.png)
+![LinkPulse Landing Page](Outputs/LinkPulse_First_Page.png)
 
 ### Dashboard Overview
 
-![LinkPulse Overview Dashboard](Outputs/LinkPulse_Overview.png)
+![LinkPulse Dashboard Overview](Outputs/LinkPulse_Overview.png)
 
 ### Link Management
 
-![LinkPulse Manage Links](Outputs/LinkPulse_ManageLinks.png)
+![LinkPulse Link Management](Outputs/LinkPulse_ManageLinks.png)
 
 ### Active Short Link
 
@@ -131,9 +141,9 @@ Screenshots provide a visual overview of the LinkPulse interface and its core wo
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
-LinkPulse follows a layered architecture that separates HTTP request handling, validation, database operations, and analytics processing.
+LinkPulse uses a layered structure to keep request handling, link validation, database operations, and analytics organized.
 
 ```mermaid
 flowchart TD
@@ -160,43 +170,44 @@ flowchart TD
     K --> G
 ```
 
-### Core Components
+### Main Components
 
-| Component | Responsibility |
+| File or Directory | What It Does |
 |---|---|
-| `app.py` | Flask application, routing, and API endpoints |
-| `app_config.py` | Application settings and environment configuration |
-| `database.py` | Database connectivity and query operations |
-| `helpers.py` | Validation, security utilities, and supporting functions |
+| `app.py` | Handles Flask routes and application logic |
+| `app_config.py` | Contains application configuration |
+| `database.py` | Handles database connections and queries |
+| `helpers.py` | Provides validation and supporting utilities |
 | `frontend/index.html` | Main dashboard interface |
-| `frontend/login.html` | Login interface |
-| `frontend/style.css` | Styling, responsive layouts, and glassmorphism |
-| `requirements.txt` | Python dependency declarations |
-| `Outputs/` | Project screenshots and visual assets |
+| `frontend/login.html` | Login page |
+| `frontend/style.css` | Dashboard styling and responsive layouts |
+| `requirements.txt` | Lists Python dependencies |
+| `Outputs/` | Stores project screenshots and visual assets |
 
-The component names should match the files in the actual repository.
+The architecture diagram is a high-level overview. The actual request flow depends on how the application is implemented.
 
 ---
 
-## 🔄 Redirect Lifecycle
+## Redirect Lifecycle
 
-A typical short-link request follows this workflow:
+When someone opens a LinkPulse short URL, the application generally needs to:
 
-1. **Request:** A visitor opens a short URL.
-2. **Lookup:** The application retrieves the corresponding link record.
-3. **Existence Check:** The application verifies that the alias exists.
-4. **Status Validation:** The engine checks whether the link is active.
-5. **Expiration Check:** The configured expiration deadline is evaluated.
-6. **Access Control:** Protected links require successful password verification.
-7. **Click-Limit Enforcement:** A conditional database update checks and increments the click count.
-8. **Telemetry Processing:** The visit is evaluated by the supported analytics pipeline.
-9. **Redirection:** Eligible visitors are redirected to the destination URL.
+1. Look up the requested alias.
+2. Check whether the link exists.
+3. Confirm that the link is active.
+4. Check its expiration settings.
+5. Verify the password if the link is protected.
+6. Enforce the configured click limit.
+7. Record eligible analytics data.
+8. Redirect the visitor to the destination.
 
-The precise order of validation, database operations, and telemetry processing depends on the implementation.
+The exact order of these operations depends on the implementation.
 
-### Atomic Click-Limit Enforcement
+### Handling Click Limits
 
-A conditional SQL update can help prevent concurrent requests from exceeding a configured click limit:
+A conditional database update can help prevent concurrent requests from exceeding a configured click limit.
+
+For example:
 
 ```sql
 UPDATE links
@@ -206,86 +217,85 @@ WHERE id = ?
   AND (click_limit IS NULL OR click_count < click_limit);
 ```
 
-This is an illustrative example. Adapt the table name, column names, placeholders, and eligibility conditions to the actual database schema.
+This query is an illustration, not a verified copy of the project's database implementation. Table names, column names, and transaction handling should match the actual schema.
 
-The application should check the number of affected rows and use appropriate transaction handling to determine whether the click was successfully recorded.
+The application should also check whether the update affected a row before allowing the redirect.
 
 ---
 
-## 🛡️ Security and Reliability
+## Security and Reliability
 
-LinkPulse incorporates defensive controls intended to reduce redirect abuse, protect administrative operations, and improve the reliability of link management.
+Link management involves more than generating short URLs. Destinations need to be validated, administrative operations need appropriate access controls, and sensitive configuration values need to be handled carefully.
 
-| Security Layer | Purpose |
+LinkPulse is designed around several defensive practices, depending on which controls are implemented and enabled.
+
+| Area | Purpose |
 |---|---|
-| Destination Validation | Validate destination URLs against configured rules |
-| SSRF-Oriented Protection | Reject prohibited hosts and address ranges where implemented |
-| Private IP Protection | Check for loopback, private, link-local, and other disallowed addresses |
-| Domain Blocklist | Reject destinations matching configured prohibited-domain rules |
-| Credential Validation | Reject URLs containing embedded credentials |
-| Click-Limit Enforcement | Use conditional SQL updates to reduce concurrency-related limit violations |
-| Rate Limiting | Apply request limits to help mitigate endpoint abuse |
-| Password Protection | Verify protected-link passwords on the server |
-| Privacy-Aware Analytics | Use salted hashes for IP-derived analytics identifiers |
-| Secret Management | Support environment-based application configuration |
+| URL Validation | Check destination URLs before accepting them |
+| SSRF Protection | Help prevent unsafe destination hosts from being accepted |
+| IP Address Checks | Reject disallowed address ranges where implemented |
+| Domain Rules | Block destinations matching configured restrictions |
+| Credential Checks | Reject URLs containing embedded credentials |
+| Click Limits | Control how many redirects a link can receive |
+| Rate Limiting | Help reduce repeated or abusive requests |
+| Password Protection | Verify access to protected links on the server |
+| Privacy-Aware Analytics | Use salted hashes for supported IP-derived identifiers |
+| Environment Configuration | Keep application secrets out of source code |
 
-### Short-Code Generation
+### Base62 Short Codes
 
 LinkPulse uses seven-character Base62 aliases.
 
-Base62 uses 62 possible characters per position. The theoretical number of seven-character combinations is:
+Since Base62 provides 62 possible characters per position, seven-character aliases have a theoretical combination space of:
 
 **62⁷ = 3,521,614,606,208**
 
-Collision checks and retry handling help prevent duplicate aliases.
+Collision checks can help prevent duplicate aliases. However, a large combination space does not automatically make generated links cryptographically secure or unpredictable.
 
-This figure represents the theoretical combination space, not a guarantee of cryptographic security or unpredictable link generation.
+### Before Deploying Publicly
 
-### Production Security Checklist
-
-Before exposing an application publicly:
-
-- Enforce HTTPS.
-- Use a strong, unique application secret.
+- Use HTTPS.
+- Set a strong, unique application secret.
 - Protect administrative routes with authentication and authorization.
-- Store passwords using an appropriate secure password-hashing algorithm.
+- Store passwords using a suitable password-hashing algorithm.
 - Validate URL schemes and reject embedded credentials.
-- Resolve hostnames and validate IPv4 and IPv6 addresses where applicable.
-- Account for DNS rebinding and redirects when enforcing SSRF protection.
+- Check resolved IPv4 and IPv6 addresses when enforcing destination restrictions.
+- Consider DNS rebinding and redirect behavior when implementing SSRF defenses.
 - Configure trusted proxy headers correctly.
-- Apply rate limits to login and other sensitive endpoints.
-- Avoid logging passwords, session tokens, and unnecessary visitor information.
-- Keep dependencies updated and review security advisories.
+- Rate-limit login and other sensitive endpoints.
+- Avoid logging passwords, session tokens, or unnecessary visitor information.
+- Keep dependencies updated.
 
-**Important:** URL validation alone does not guarantee complete SSRF protection. The actual protection level depends on the implementation and its handling of DNS resolution, redirects, and network requests.
+**Note:** URL validation alone cannot guarantee complete SSRF protection. The actual level of protection depends on the application's DNS resolution, network access, and redirect handling.
 
 ---
 
-## 🧰 Technology Stack
+## Technology Stack
 
 | Category | Technology |
 |---|---|
-| Programming Language | Python 3.10+ |
-| Backend Framework | Flask 3.x |
-| Database | SQLite, MySQL / MariaDB where configured |
-| Database Access | Custom database adapter |
+| Language | Python 3.10+ |
+| Backend | Flask 3.x |
+| Database | SQLite, with MySQL / MariaDB where configured |
 | Frontend | HTML5, CSS3, Vanilla JavaScript ES6+ |
-| UI Design | Glassmorphism and responsive CSS |
-| QR Generation | QRCode.js |
-| Analytics | JavaScript charting and user-agent parsing |
+| UI | Glassmorphism and responsive CSS |
+| QR Codes | QRCode.js |
+| Database Utilities | Custom database adapter |
 | Security Utilities | Werkzeug and custom validation helpers |
-| Typography | Plus Jakarta Sans, JetBrains Mono |
+| Typography | Plus Jakarta Sans and JetBrains Mono |
 | Configuration | Environment variables |
 | Deployment | Python-compatible hosting or Linux VPS |
 
-The listed stack describes the intended project architecture. Confirm the exact packages and versions against `requirements.txt` before deployment.
+Check `requirements.txt` and the application configuration for the exact dependencies and versions used by your setup.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
+
+The repository is organized around the Flask application, its frontend, supporting modules, and screenshots.
 
 ```text
-linkpulse/
+LinkPulse-By-CWC/
 │
 ├── Outputs/
 │   ├── Group_Logo.png
@@ -311,22 +321,24 @@ linkpulse/
 └── README.md
 ```
 
-This structure is illustrative. Update it if the repository contains additional files, different filenames, environment templates, or separate test directories.
+This is an example layout. Update it if your repository contains additional files or uses different filenames.
 
-**Database note:** If `linkpulse.db` is a locally generated database, decide whether it should be committed. Avoid publishing real credentials, private visitor data, or production records.
+**Database note:** If `linkpulse.db` contains local or real visitor records, review it before committing. Never publish credentials or private production data.
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
+
+Want to run LinkPulse locally? Follow these steps.
 
 ### Prerequisites
 
-Install the following tools:
+You'll need:
 
-- Python 3.10 or higher
+- Python 3.10 or later
 - pip
 - Git
-- A supported database, depending on the selected configuration
+- Any additional database configured for your setup
 
 ### 1. Clone the Repository
 
@@ -334,8 +346,6 @@ Install the following tools:
 git clone https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC.git
 cd LinkPulse-By-CWC
 ```
-
-If your local repository directory has a different name, change the `cd` command accordingly.
 
 ### 2. Create a Virtual Environment
 
@@ -367,11 +377,11 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
+### 4. Configure the Application
 
-Create a local `.env` file if the application supports loading environment variables from it.
+If the application supports loading environment variables from a `.env` file, create one in the repository root.
 
-For example:
+Example:
 
 ```dotenv
 SECRET_KEY=replace-with-a-strong-random-secret
@@ -380,69 +390,68 @@ DB_ENGINE=sqlite
 SQLITE_PATH=linkpulse.db
 ```
 
-These are example values, not a guarantee that every variable is required or recognized by the application. Verify supported settings in `app_config.py` and the database implementation.
+These are example settings. Check `app_config.py` and the database code to confirm the variable names your version actually supports.
 
-Do not commit production secrets or real credentials.
+Keep production secrets out of Git.
 
-### 5. Run the Application
+### 5. Start the Application
 
 ```bash
 python app.py
 ```
 
-Open the application in your browser:
+If the application uses the default Flask development server, open:
 
 **http://127.0.0.1:5000**
 
-The actual host and port depend on the application's runtime configuration.
+The actual address and port depend on your configuration.
 
 ---
 
-## 🔧 Configuration
+## Configuration
 
-The following variables illustrate common configuration options for LinkPulse.
+LinkPulse may use environment variables to control application behavior.
 
 | Variable | Purpose | Example |
 |---|---|---|
-| `SECRET_KEY` | Secret used for session security and supported signing operations | A strong, unique secret |
-| `PUBLIC_BASE_URL` | Public base URL used to generate short links | `https://links.example.com` |
-| `DB_ENGINE` | Selects the configured database engine | `sqlite` |
-| `SQLITE_PATH` | Database file path when SQLite is selected | `linkpulse.db` |
+| `SECRET_KEY` | Supports session security and signing operations | A strong, unique secret |
+| `PUBLIC_BASE_URL` | Base URL used when generating short links | `https://links.example.com` |
+| `DB_ENGINE` | Selects the database engine | `sqlite` |
+| `SQLITE_PATH` | SQLite database location | `linkpulse.db` |
 
-Configuration requirements depend on the actual implementation.
+Check the source code for the exact settings supported by your version.
 
 ### Recommended Practices
 
 - Keep local secrets in `.env`.
 - Add `.env` to `.gitignore`.
-- Commit `.env.example` only if it contains placeholder values.
-- Use HTTPS for public deployments.
-- Configure the public base URL to match the deployed domain.
-- Use persistent database storage.
-- Store production secrets in the hosting platform's secret-management system where available.
-- Verify database initialization and migration behavior before deployment.
+- Use placeholder values in `.env.example`.
+- Set the correct public domain before deployment.
+- Use HTTPS for public traffic.
+- Confirm that the production database has persistent storage.
+- Review database initialization and migration behavior.
 
 ---
 
-## 🔌 API Reference
+## API Reference
 
-The following endpoints summarize the intended API surface described for LinkPulse. Verify their registration, HTTP methods, payloads, authentication requirements, and response schemas against `app.py` before treating this table as a guaranteed API contract.
+The following table provides an overview of the intended API endpoints. Check `app.py` before relying on these paths or methods, since the actual routes and payload formats depend on the implementation.
 
-| Method | Endpoint | Description |
+| Method | Endpoint | Purpose |
 |---|---|---|
 | `POST` | `/api/login` | Authenticate administrative credentials |
 | `GET` | `/api/links` | Retrieve links and supported filters |
 | `POST` | `/api/links` | Create a short link |
-| `PATCH` | `/api/links/<id>` | Update supported link properties |
+| `PATCH` | `/api/links/<id>` | Update link properties |
 | `PATCH` | `/api/links/<id>/status` | Change link status |
-| `DELETE` | `/api/links/<id>` | Delete a link record |
+| `DELETE` | `/api/links/<id>` | Delete a link |
 | `POST` | `/api/links/<id>/simulate-click` | Simulate a visit for testing |
 | `GET` | `/api/analytics/summary` | Retrieve aggregate analytics |
 | `GET` | `/api/analytics/clicks?days=7` | Retrieve daily click trends |
-| `GET` | `/api/analytics/breakdown` | Retrieve supported traffic breakdowns |
+| `GET` | `/api/analytics/breakdown` | Retrieve available traffic breakdowns |
 | `POST` | `/api/campaigns` | Create a campaign |
 | `POST` | `/api/links/import` | Import links from CSV |
-| `GET` | `/api/links/export` | Export link records as CSV |
+| `GET` | `/api/links/export` | Export link data as CSV |
 
 ### Example: Create a Short Link
 
@@ -461,35 +470,35 @@ Content-Type: application/json
 }
 ```
 
-The field names are illustrative. Adjust them to match the actual API schema.
+The payload is an example. Use the field names and response format supported by the actual API.
 
-A successful response should return the generated short-link information according to the application's implemented response format.
+### API Considerations
 
-### API Best Practices
-
-- Validate all input on the server.
-- Enforce authentication and authorization where required.
+- Validate incoming data on the server.
+- Require authentication for protected operations.
 - Return appropriate HTTP status codes.
 - Validate filtering and pagination parameters.
 - Apply rate limits to sensitive endpoints.
-- Avoid exposing internal exceptions or secrets.
-- Document actual request and response schemas before publishing a stable API contract.
+- Avoid returning internal errors or secret values to clients.
+- Document the actual request and response schemas.
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
-LinkPulse can be deployed to a Python-compatible hosting platform or a Linux VPS.
+LinkPulse can be deployed to a Python-compatible hosting platform or a Linux server. The exact process depends on the hosting provider and the application's configuration.
 
-### 1. Configure a Production WSGI Server
+### 1. Set Up a Production Server
 
-For a supported Linux deployment, add Gunicorn if it is not already included in `requirements.txt`:
+For a compatible Linux environment, Gunicorn can serve the Flask application if it is not already included in the dependencies.
+
+Add the following to `requirements.txt` if needed:
 
 ```text
 gunicorn>=21.2.0
 ```
 
-Install the project dependencies:
+Then install the dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -497,122 +506,122 @@ pip install -r requirements.txt
 
 ### 2. Configure the Start Command
 
-For a hosting platform that supports a `Procfile`, create one in the repository root:
+For a hosting provider that supports a `Procfile`, an example command is:
 
 ```text
 web: gunicorn app:app
 ```
 
-This assumes `app.py` exports a Flask application instance named `app`. Adjust the command if the actual application entry point differs.
+This assumes `app.py` exposes a Flask instance named `app`. Change the command if your entry point uses a different name.
 
-### 3. Configure Production Variables
+### 3. Set Production Variables
 
-Set the required environment variables in the hosting platform's configuration settings.
+Configure the necessary environment variables through your hosting provider.
 
-At minimum, verify:
+Check the following before deploying:
 
-- A strong production `SECRET_KEY`.
-- The correct `PUBLIC_BASE_URL`.
-- The configured database engine and connection details.
-- Persistent storage for SQLite, if applicable.
-- HTTPS and correctly configured proxy headers.
+- Application secret
+- Public base URL
+- Database connection settings
+- Persistent storage
+- HTTPS and proxy configuration
 
-### 4. Verify the Deployment
+### 4. Test the Live Deployment
 
-After deployment:
+After deployment, check that:
 
-1. Open the public application URL.
-2. Verify login and session handling.
-3. Create and test a short link.
-4. Confirm active, inactive, expired, and click-limited behavior.
-5. Test password-protected links where supported.
-6. Verify analytics updates.
-7. Test CSV import/export and QR generation where implemented.
-8. Check logs for database, configuration, or routing errors.
+1. The application opens successfully.
+2. Login and session handling work.
+3. New short links can be created.
+4. Redirects respect status, expiration, and click-limit settings.
+5. Protected links behave as expected.
+6. Analytics update correctly.
+7. CSV import/export and QR generation work where implemented.
+8. Application logs show no configuration or database errors.
 
-### Database Recommendation
+### Choosing a Database
 
-SQLite is suitable for development and certain single-instance deployments. Multi-instance applications generally benefit from a shared database such as MySQL or MariaDB with appropriate transaction handling and connection management.
+SQLite can be a practical choice for local development and some single-instance deployments. Applications running across multiple instances may benefit from a shared database such as MySQL or MariaDB.
 
-A deployment platform does not automatically make a local SQLite file persistent. Verify the storage behavior of the selected hosting environment.
+Check your hosting provider's storage rules before relying on a local SQLite file; local files may not persist across restarts or redeployments.
 
 ---
 
-## 🧪 Testing and Troubleshooting
+## Testing and Troubleshooting
 
-Before presenting the project, test the main workflows.
+Before sharing a release, run through the main workflows and confirm that each behaves as expected.
 
-| Test | Expected Behavior |
+| Test | What to Check |
 |---|---|
 | Create a short link | A unique alias is generated |
-| Open a valid short link | The visitor is redirected to the configured destination |
-| Open an unknown alias | An appropriate not-found response is returned |
-| Deactivate a link | Further redirects are denied |
-| Exceed a click limit | Additional redirects are denied according to the configured policy |
-| Open an expired link | The expired-link policy is enforced |
-| Access a protected link | Password verification is required |
-| Generate a QR code | The QR code represents the intended short URL |
-| Import a CSV file | Valid rows are processed and invalid rows are reported |
-| View analytics | Supported traffic metrics are displayed |
-| Submit an invalid destination | The server rejects it according to the validation rules |
+| Open a valid link | The destination opens correctly |
+| Open an unknown alias | An appropriate not-found response appears |
+| Deactivate a link | Redirects are denied |
+| Reach the click limit | Further redirects follow the configured policy |
+| Open an expired link | Expiration rules are enforced |
+| Open a protected link | Password verification is required |
+| Generate a QR code | The code points to the intended short URL |
+| Import a CSV | Valid rows are processed and invalid rows are reported |
+| View analytics | Available metrics display correctly |
+| Submit an invalid destination | Validation rules reject it |
 
-These are recommended test cases, not a claim that automated tests currently exist.
+These are recommended checks, not a claim that automated tests already exist.
 
-### Common Issues
+### Common Problems
 
-**Application fails to start**
+**The application won't start**
 
-- Confirm the Python version.
-- Activate the correct virtual environment.
-- Install dependencies from `requirements.txt`.
-- Check configuration values and startup logs.
+- Check your Python version.
+- Activate the virtual environment.
+- Install the required packages.
+- Review configuration values and startup logs.
 
-**Database connection errors**
+**Database errors**
 
-- Verify the database engine and connection configuration.
-- Check database permissions and file paths.
-- Confirm database initialization and schema compatibility.
+- Confirm the selected database engine.
+- Check connection settings and file paths.
+- Verify that the database schema has been initialized.
 
-**Short links fail to redirect**
+**Short links aren't redirecting**
 
-- Confirm that the alias exists and is active.
-- Check expiration and click-limit policies.
-- Verify the destination URL and application logs.
+- Confirm the alias exists and is active.
+- Check expiration and click-limit settings.
+- Review the destination URL and application logs.
 
-**Analytics are missing or inaccurate**
+**Analytics aren't updating**
 
-- Confirm that click events are recorded correctly.
-- Check date filters, bot-filtering rules, and database queries.
-- Verify proxy headers if location or client metadata depends on them.
+- Check whether click events are being recorded.
+- Review date filters and bot-filtering rules.
+- Confirm the relevant database queries are returning data.
 
-**Production links use the wrong domain**
+**Generated links use the wrong domain**
 
-- Verify `PUBLIC_BASE_URL`.
-- Check HTTPS and reverse-proxy configuration.
-- Restart or redeploy after changing environment variables when required.
+- Check `PUBLIC_BASE_URL`.
+- Review HTTPS and reverse-proxy settings.
+- Restart or redeploy the application if configuration changes require it.
 
 ---
 
-## 🛣️ Future Roadmap
+## Future Roadmap
 
-Potential future enhancements include:
+There is room to take LinkPulse further. Possible next steps include:
 
 - Custom domains and branded short links.
 - Multi-tenant accounts and role-based access control.
-- Advanced bot detection and abuse monitoring.
-- Asynchronous processing for high-volume telemetry.
-- Expanded campaign comparisons and analytics exports.
-- Configurable analytics date ranges.
-- Automated testing and continuous integration.
-- Enhanced API documentation and integration examples.
+- Improved bot detection and abuse monitoring.
+- Background processing for high-volume telemetry.
+- More detailed campaign comparisons and analytics exports.
+- Custom analytics date ranges.
+- Automated tests and continuous integration.
+- Expanded API documentation and integration examples.
 
-These are planned or potential improvements and should not be interpreted as currently implemented features.
+These are potential future improvements, not a list of features guaranteed to be available today.
 
 ---
 
-## 📄 License
+## License
 
-This project is distributed under the MIT License, provided that the repository's `LICENSE` file contains the applicable MIT license text.
+LinkPulse is intended to be distributed under the MIT License. Make sure the repository contains the correct MIT license text in its `LICENSE` file.
 
 See [LICENSE](LICENSE) for details.
 
