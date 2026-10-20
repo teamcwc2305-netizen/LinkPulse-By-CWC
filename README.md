@@ -57,6 +57,8 @@ The platform provides an administrative workspace for creating, organizing, moni
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
 ```text
 linkpulse/
 │
@@ -82,6 +84,7 @@ linkpulse/
 ├── linkpulse.db                 # SQLite database storage
 ├── requirements.txt             # List of Python dependencies
 └── README.md                    # Project overview & documentation
+
 ---
 
 ## Key Features
