@@ -498,7 +498,19 @@ def serve_outputs(filename):
 
 @app.get("/Group_Logo.png")
 def serve_group_logo():
-    return send_from_directory(FRONTEND_DIR / "Outputs", "Group_Logo.png")
+    for folder_name in ["Outputs", "outputs", "frontend"]:
+        target_dir = BASE_DIR / folder_name
+        if target_dir.is_dir():
+            for f in os.listdir(target_dir):
+                # Case-insensitive (Group_Logo.png ya group_logo.png sab chalega)
+                if f.lower() in ("group_logo.png", "group-logo.png", "grouplogo.png"):
+                    return send_from_directory(target_dir, f)
+
+    for f in os.listdir(BASE_DIR):
+        if f.lower() in ("group_logo.png", "group-logo.png"):
+            return send_from_directory(BASE_DIR, f)
+
+    return Response("Logo not found", status=404)
 
 @app.get("/favicon.ico")
 def serve_favicon():
