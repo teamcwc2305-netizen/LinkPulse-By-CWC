@@ -607,7 +607,7 @@ This project is licensed under the **MIT License**. See the [`LICENSE`](LICENSE)
 ---
 
 ## ScreenShot
-![image alt](image_url)
+![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/a39e9a87f1863f53cc6e864130d0e267c63e4b6e/Pictures/LinkPluse_ManageLinks.png)
 
 ---
 
