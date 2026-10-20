@@ -498,17 +498,19 @@ def serve_outputs(filename):
 
 @app.get("/Group_Logo.png")
 def serve_group_logo():
-    for folder_name in ["Outputs", "outputs", "frontend"]:
-        target_dir = BASE_DIR / folder_name
-        if target_dir.is_dir():
-            for f in os.listdir(target_dir):
-                # Case-insensitive (Group_Logo.png ya group_logo.png sab chalega)
-                if f.lower() in ("group_logo.png", "group-logo.png", "grouplogo.png"):
-                    return send_from_directory(target_dir, f)
+    # Root Outputs folder load
+    outputs_dir = BASE_DIR / "Outputs"
+    if outputs_dir.is_dir():
+        for f in os.listdir(outputs_dir):
+            if f.lower() == "group_logo.png":
+                return send_from_directory(outputs_dir, f)
 
-    for f in os.listdir(BASE_DIR):
-        if f.lower() in ("group_logo.png", "group-logo.png"):
-            return send_from_directory(BASE_DIR, f)
+    # Backup check
+    for folder in [FRONTEND_DIR, BASE_DIR]:
+        if folder.is_dir():
+            for f in os.listdir(folder):
+                if f.lower() == "group_logo.png":
+                    return send_from_directory(folder, f)
 
     return Response("Logo not found", status=404)
 
