@@ -572,26 +572,26 @@ These items represent potential enhancements, not necessarily implemented featur
 
 ## ScreenShot
 
-### Login Page-
+### Login Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/525187093a785d4bf2b491661448339d4e52a571/Outputs/LinkPulse_LoginPage.png)
 
-### First Page-
+### First Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_First_Page.png)
 
-### Overview Page-
+### Overview Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPluse_Overview.png)
 
-### Manage Link Page-
+### Manage Link Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_ManageLinks.png)
 
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_ActiveShortLink.png
 )
 
-### Analytics Page-
+### Analytics Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_Analytics.png
 )
 
-### Campaigns Page-
+### Campaigns Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_MarkitingCampaigns.png)
 
 ---
