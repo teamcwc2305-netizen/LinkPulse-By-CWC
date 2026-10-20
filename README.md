@@ -62,17 +62,13 @@ LINKPULSE/
 │   ├── index.html           # Main telemetry dashboard
 │   ├── login.html           # Authentication interface
 │   └── style.css            # Glassmorphic UI design system
-├── .env.example             # Environment configuration template
 ├── README.md                # Project documentation
 ├── app.py                   # Flask server, routing engine and API
 ├── config.py                # Environment configuration loader
 ├── database.py              # SQLite and MySQL database adapter
 ├── helpers.py               # Security utilities and helper functions
 ├── requirements.txt         # Python dependencies
-└── LICENSE                  # MIT license, if included in the repository
 ```
-
-The tree represents the documented project layout. Additional files, such as a `Procfile`, test directory, migration scripts, or deployment configuration, may be added as the project evolves.
 
 ---
 
@@ -345,12 +341,6 @@ Open the application in your browser:
 
 The actual host and port depend on the application's runtime configuration.
 
-### Demo Credentials
-
-If a demo account is configured in the application, use the credentials supplied by the project owner or its development configuration.
-
-Do not rely on example credentials in production. Replace default credentials and verify the authentication configuration before exposing the application publicly.
-
 ---
 
 ## Configuration Reference
@@ -494,45 +484,6 @@ Do not assume that moving the application to another hosting platform automatica
 
 ## Testing and Troubleshooting
 
-### Mermaid Diagrams Are Not Rendering
-
-Check the following:
-
-1. Use three backticks followed immediately by `mermaid`.
-2. Place the closing three backticks on a separate line.
-3. Remove HTML entities such as `&#x20;` from Mermaid source.
-4. Use ordinary spaces instead of escaped indentation.
-5. Verify the diagram syntax using a Mermaid-compatible preview.
-6. Confirm that your Markdown renderer supports Mermaid.
-
-Correct example:
-
-````markdown
-```mermaid
-flowchart TD
-    A["Visitor"] --> B["Flask Application"]
-    B --> C["Database"]
-```
-````
-
-GitHub supports Mermaid in Markdown files. Some other Markdown editors and preview extensions require additional configuration.
-
-### Table of Contents Links Are Not Working
-
-- Keep the TOC labels and heading names consistent.
-- Check the generated anchor for each heading.
-- Avoid unnecessary punctuation in heading names.
-- Remove duplicate headings where practical.
-- Verify that the README is being rendered as Markdown rather than displayed as raw text.
-
-For example:
-
-```markdown
-- [System Architecture](#system-architecture)
-
-## System Architecture
-```
-
 ### Application Fails to Start
 
 Check the Python version, virtual environment, installed dependencies, environment variables, and Flask application entry point.
@@ -542,10 +493,6 @@ python --version
 python -m pip check
 python app.py
 ```
-
-### Database Errors
-
-Verify the configured database engine, file path or connection settings, database permissions, and schema initialization process.
 
 ### Redirects or Click Limits Behave Unexpectedly
 
@@ -594,11 +541,8 @@ These items represent potential enhancements, not necessarily implemented featur
 ### Campaigns Page
 ![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/4e5e8ab3767106f6bc74aaa46f18bcca5c5060e0/Outputs/LinkPulse_MarkitingCampaigns.png)
 
-
-### AboutUs Page
-![image alt](https://github.com/teamcwc2305-netizen/LinkPulse-By-CWC/blob/82e3a0ca53b75b9cc5f0289d300a363c6e974f14/Outputs/LinkPulse_AboutUsPage.png)
-
 ---
+
 ## Weblink
 
 [https://LinkPulse-by-cwc.onrender.com](https://linkpulse-by-cwc.onrender.com/)
